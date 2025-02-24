@@ -7,8 +7,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
-    environment:
-      - BACKEND_CORS_ORIGINS=http://localhost:5173
     networks:
       - citibike-network
 

@@ -10,23 +10,25 @@ const Form: React.FC<Props> = ({ onSearch }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (typeof year === "string" || typeof month === "string") {
-      alert("Por favor, ingresa valores numéricos.");
+  
+    if (typeof year === "string") {
+      alert("Por favor, ingresa un año válido.");
       return;
     }
-
+  
     if (year < 2000 || year > new Date().getFullYear()) {
       alert("El año debe estar entre 2000 y el actual.");
       return;
     }
-
-    if (month && (month < 1 || month > 12)) {
+  
+    const parsedMonth = month === "" ? undefined : month;
+  
+    if (parsedMonth !== undefined && (parsedMonth < 1 || parsedMonth > 12)) {
       alert("El mes debe estar entre 1 y 12.");
       return;
     }
-
-    onSearch(year, month);
+  
+    onSearch(year, parsedMonth);
   };
 
   return (
