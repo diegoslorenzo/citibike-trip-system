@@ -97,9 +97,7 @@ or download it from https://github.com/diegoslorenzo/citibike-trip-system
 
 ```docker-compose up --build -d```
 
-4. Run from web browser
-
-Go to http://localhost:5173 
+4. Run in the browser at http://localhost:5173 or load swagger UI in http://localhost:8000/docs 
 
 ## 🧪 Testing
 
