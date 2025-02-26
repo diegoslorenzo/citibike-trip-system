@@ -13,3 +13,11 @@ __pycache__/
 
 
 venv/
+
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover

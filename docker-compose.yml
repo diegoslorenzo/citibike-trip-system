@@ -2,6 +2,7 @@ version: "3.8"
 
 services:
   backend:
+    container_name: "citibike-system"
     build:
       context: ./citibike-system-data
       dockerfile: Dockerfile
@@ -11,6 +12,7 @@ services:
       - citibike-network
 
   frontend:
+    container_name: react-frontend
     build:
       context: ./citibike-frontend
       dockerfile: Dockerfile
