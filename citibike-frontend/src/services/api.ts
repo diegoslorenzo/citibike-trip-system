@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000/api/v1/download/";
+const API_URL = "http://127.0.0.1:8000/api/v1/citibike-datatset/";
 
 export const fetchDatasets = async (year: number, month?: number) => {
     try {

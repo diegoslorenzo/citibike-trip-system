@@ -6,8 +6,8 @@ import httpx
 
 router = APIRouter()
 
-@router.get("/download/")
-async def download_data(year: int, month: int = None):
+@router.get("/citibike-datatset/")
+async def citibike_datatset(year: int, month: int = None):
     """Endpoint que obtiene las URLs disponibles de CitiBike."""
     url_generator = CitiBikeURLGenerator()
     

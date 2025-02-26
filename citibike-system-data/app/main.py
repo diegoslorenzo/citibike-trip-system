@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.v1.endpoints import download
+from app.api.v1.endpoints import citibike_datatset
 from app.core.config import settings
 
 app = FastAPI(title="CitiBike Data API")
@@ -15,7 +15,7 @@ app.add_middleware(
 )
 
 # Incluir rutas
-app.include_router(download.router, prefix="/api/v1")
+app.include_router(citibike_datatset.router, prefix="/api/v1")
 
 if __name__ == "__main__":
     import uvicorn

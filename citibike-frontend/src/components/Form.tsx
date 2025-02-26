@@ -12,19 +12,19 @@ const Form: React.FC<Props> = ({ onSearch }) => {
     e.preventDefault();
   
     if (typeof year === "string") {
-      alert("Por favor, ingresa un año válido.");
+      alert("Please, insert a valid year.");
       return;
     }
   
     if (year < 2000 || year > new Date().getFullYear()) {
-      alert("El año debe estar entre 2000 y el actual.");
+      alert("The year must be between 2000 and " + new Date().getFullYear());
       return;
     }
   
     const parsedMonth = month === "" ? undefined : month;
   
     if (parsedMonth !== undefined && (parsedMonth < 1 || parsedMonth > 12)) {
-      alert("El mes debe estar entre 1 y 12.");
+      alert("The month must be between 1 and 12.");
       return;
     }
   
@@ -44,7 +44,7 @@ const Form: React.FC<Props> = ({ onSearch }) => {
               type="number"
               value={year}
               onChange={(e) => setYear(Number(e.target.value) || "")}
-              placeholder="Año"
+              placeholder="2020"
               className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
             />
           </div>
@@ -59,7 +59,7 @@ const Form: React.FC<Props> = ({ onSearch }) => {
               type="number"
               value={month}
               onChange={(e) => setMonth(Number(e.target.value) || "")}
-              placeholder="Mes (opcional)"
+              placeholder="1"
               className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
             />
           </div>
