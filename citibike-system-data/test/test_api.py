@@ -18,23 +18,23 @@ def test_get_citibike_dataset_without_month(year):
     assert response.status_code == 200
     json_response = response.json()
     
-    # Debe devolver una lista de datasets
+    # Must return a list of datasets.
     assert isinstance(json_response, list)
 
-    # Debe haber como máximo 12 meses * 4 formatos = 48 posibles archivos
+    # Must be at most 12 months * 4 formats = 48 possible files 
     assert len(json_response) <= 48
 
-    # Opcional: verificar que hay datasets con diferentes meses
+    # Check that there are datasets with different months
     months_found = set()
     for item in json_response:
         assert "name" in item
         assert "url" in item
         assert item["url"].startswith("https://s3.amazonaws.com/tripdata/")
         
-        # Extraer el mes del nombre del archivo
+        # Extract the month from the file name
         for month in range(1, 13):
             if f"{year}{month:02d}" in item["name"]:
                 months_found.add(month)
 
-    # Deberíamos haber encontrado al menos un mes
+    # Must have found at least one month
     assert len(months_found) > 0

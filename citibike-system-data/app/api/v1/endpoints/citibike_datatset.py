@@ -8,7 +8,7 @@ router = APIRouter()
 
 @router.get("/citibike-datatset/")
 async def citibike_datatset(year: int, month: int = None):
-    """Endpoint que obtiene las URLs disponibles de CitiBike."""
+    """Endpoint that gets the available CitiBike URLs from the given year and month."""
     url_generator = CitiBikeURLGenerator()
     
     async with httpx.AsyncClient() as client:

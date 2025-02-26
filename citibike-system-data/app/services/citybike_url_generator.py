@@ -4,7 +4,6 @@ from typing import List
 
 from app.core.config import BASE_URL
 
-### 🔹 IMPLEMENTACIÓN CON VARIACIONES DE FORMATOS (Single Responsibility - SRP) ###
 class CitiBikeURLGenerator(URLGenerator):
     def generate(self, year: int, month: int) -> List[str]:
         """Genera todas las posibles combinaciones de URLs para un mes y año."""

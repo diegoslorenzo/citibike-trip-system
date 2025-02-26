@@ -4,11 +4,11 @@ from typing import List
 BASE_URL = "https://s3.amazonaws.com/tripdata/"
 
 class Settings(BaseSettings):
-    # Configuración del servidor
+    # Server configuration
     APP_NAME: str = "CitiBike API"
     DEBUG: bool = True
 
-    # Configuración de CORS (asegurando que sea una lista)
+    # CORS configuration (making sure it's a list)
     BACKEND_CORS_ORIGINS: List[str] = [
         "http://localhost:5173",
         "http://127.0.0.1:5173"

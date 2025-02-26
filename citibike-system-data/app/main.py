@@ -5,16 +5,16 @@ from app.core.config import settings
 
 app = FastAPI(title="CitiBike Data API")
 
-# Configurar CORS con los orígenes permitidos
+# Configure CORS with allowed origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.BACKEND_CORS_ORIGINS,  # Obtenemos los orígenes de `config.py`
+    allow_origins=settings.BACKEND_CORS_ORIGINS,  # Get the origins from `config.py`.
     allow_credentials=True,
-    allow_methods=["*"],  # Permitir todos los métodos (GET, POST, etc.)
-    allow_headers=["*"],  # Permitir todos los headers
+    allow_methods=["*"],  # Allow all methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allow all headers.
 )
 
-# Incluir rutas
+# Include routes from the citibike_dataset module
 app.include_router(citibike_datatset.router, prefix="/api/v1")
 
 if __name__ == "__main__":

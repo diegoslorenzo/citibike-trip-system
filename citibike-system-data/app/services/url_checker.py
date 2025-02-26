@@ -7,7 +7,7 @@ class URLChecker:
         self.client = client
 
     async def check_urls(self, urls: List[str]) -> List[Dataset]:
-        """Verifica si las URLs existen en el servidor."""
+        """Check if the URLs exist on the server."""
         valid_files = []
         for url in urls:
             response = await self.client.head(url)
