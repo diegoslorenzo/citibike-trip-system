@@ -1,19 +1,19 @@
-# Usar Node.js como base
+# Use Node.js as base
 FROM node:23.6.1
 
-# Definir directorio de trabajo
+# Define working directory
 WORKDIR /app
 
-# Copiar package.json e instalar dependencias
+# COPY package.json and install dependencies
 COPY package.json package-lock.json ./
 RUN npm install
 
-# Copiar código fuente
+# COPY the rest of the application
 COPY . .
 
-# Construir la aplicación
+# Build the React app
 RUN npm run build
 
-# Usar un servidor web ligero para servir React
+# Usage of the serve package to serve the static files
 RUN npm install -g serve
 CMD ["serve", "-s", "dist", "-l", "5173"]
